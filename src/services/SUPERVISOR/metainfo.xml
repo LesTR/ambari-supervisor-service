@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<metainfo>
+	<schemaVersion>2.0</schemaVersion>
+	<services>
+		<service>
+			<name>SUPERVISOR</name>
+			<displayName>Supervisor</displayName>
+			<comment>Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.</comment>
+			<version>3.0</version>
+			<components>
+				<component>
+					<name>DAEMON</name>
+					<displayName>Supervisor</displayName>
+					<category>SLAVE</category>
+					<cardinality>0+</cardinality>
+
+					<commandScript>
+						<script>scripts/supervisor_component.py</script>
+						<scriptType>PYTHON</scriptType>
+						<timeout>600</timeout>
+					</commandScript>
+				</component>
+			</components>
+			<osSpecifics>
+				<osSpecific>
+					<osFamily>ubuntu14</osFamily>
+					<packages>
+						<package>
+							<name>supervisor</name>
+						</package>
+					</packages>
+				</osSpecific>
+			</osSpecifics>
+		</service>
+	</services>
+</metainfo>
